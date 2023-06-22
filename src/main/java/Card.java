@@ -25,7 +25,7 @@ public class Card {
      * @param rank rank/face value of card
      * @param pointValue point value of the card
      */
-    public Card(String suit, String rank, int pointValue) {
+    public Card(final String suit, final String rank, final int pointValue) {
         this.suit = suit;
         this.rank = rank;
         this.pointValue = pointValue;
@@ -45,7 +45,7 @@ public class Card {
      *
      * @param rank value of card (i.e. 9, 10, jack, etc.)
      */
-    public void setRank(String rank) {
+    public void setRank(final String rank) {
         this.rank = rank;
     }
 
@@ -63,7 +63,7 @@ public class Card {
      *
      * @param pointValue integer point value
      */
-    public void setPointValue(int pointValue) {
+    public void setPointValue(final int pointValue) {
         this.pointValue = pointValue;
     }
 
@@ -81,7 +81,7 @@ public class Card {
      *
      * @param suit suit to assign to card
      */
-    public void setSuit(String suit) {
+    public void setSuit(final String suit) {
         this.suit = suit;
     }
 

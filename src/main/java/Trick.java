@@ -88,5 +88,4 @@ public class Trick {
         this.leadCard = leadCard;
     }
 
-
 }

@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,9 +9,10 @@ import javax.swing.*;
 
 
 /**
- * GameView is the GUI (view) class that holds all the UI elements and logic.
+ * GameView is the GUI class that holds all the UI elements and logic.
  */
 public class GameView extends JFrame {
+    @Serial
     private static final long serialVersionUID = 1L;
     /**
      * Main JPanel to hold all UI elements.
@@ -379,7 +381,7 @@ public class GameView extends JFrame {
     }
 
     /**
-     * Resizes the PNG card images so they are displayed consistently.
+     * Resizes the PNG card images, so they are displayed consistently.
      *
      * @param icon the image to be resized
      * @param width the width to resize the image to
@@ -403,47 +405,23 @@ public class GameView extends JFrame {
     private String getCardImgStr(final String suit, final String rank) {
         String cardSuitImgStr;
         String cardRankImgStr;
-        switch (suit) {
-            case "Hearts":
-                cardSuitImgStr = "H";
-                break;
-            case "Diamonds":
-                cardSuitImgStr = "D";
-                break;
-            case "Spades":
-                cardSuitImgStr = "S";
-                break;
-            case "Clubs":
-                cardSuitImgStr = "C";
-                break;
-            default:
-                cardSuitImgStr = "X";
-                break;
-        }
+        cardSuitImgStr = switch (suit) {
+            case "Hearts" -> "H";
+            case "Diamonds" -> "D";
+            case "Spades" -> "S";
+            case "Clubs" -> "C";
+            default -> "X";
+        };
 
-        switch (rank) {
-            case "9":
-                cardRankImgStr = "9";
-                break;
-            case "10":
-                cardRankImgStr = "10";
-                break;
-            case "Jack":
-                cardRankImgStr = "J";
-                break;
-            case "Queen":
-                cardRankImgStr = "Q";
-                break;
-            case "King":
-                cardRankImgStr = "K";
-                break;
-            case "Ace":
-                cardRankImgStr = "A";
-                break;
-            default:
-                cardRankImgStr = "X";
-                break;
-        }
+        cardRankImgStr = switch (rank) {
+            case "9" -> "9";
+            case "10" -> "10";
+            case "Jack" -> "J";
+            case "Queen" -> "Q";
+            case "King" -> "K";
+            case "Ace" -> "A";
+            default -> "X";
+        };
 
         return cardRankImgStr + cardSuitImgStr;
     }

@@ -153,7 +153,7 @@ public class Game {
         String leadingSuit = null;
 
         // find the suit of the left bower
-        String leftBowerSuit = switch (trump) {
+        final String leftBowerSuit = switch (trump) {
             case "Hearts" -> "Diamonds";
             case "Diamonds" -> "Hearts";
             case "Clubs" -> "Spades";
@@ -315,8 +315,8 @@ public class Game {
 
                 // checks to see if the user has good enough
                 // cards to choose when trump is undecided
-                for (int suitPoint : suitPoints) {
-                    if (suitPoint > 25 && suitPoint > highestSuitScore) {
+                for (final int suitPoint : suitPoints) {
+                    if (suitPoint > 20 && suitPoint > highestSuitScore) {
                         playerDecidedTrump = currentPlayerTurn;
                         highestSuitScore = suitPoint;
                         trump = card.getSuit();

@@ -4,11 +4,10 @@ import java.util.List;
 
 /**
  * Represents a collection of cards held by a player.
- * provide methods for adding and removing cards from the hand,
- * sorting the cards, and performing other hand-related operations.
+ * Provides methods for adding and removing cards from
+ * the hand, and performing other hand-related operations.
  */
 public class Hand {
-
     /**
      * Creates a list to hold cards as objects.
      */

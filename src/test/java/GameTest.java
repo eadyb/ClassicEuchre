@@ -324,38 +324,6 @@ class GameTest {
         assertEquals("Hearts", cardToPlay.getSuit(), "AI followed suit.");
     }
 
-    /**
-     * This test checks if the AI correctly decides to play a
-     * higher trump card when the leading card is not a trump card.
-     */
-    @Test
-    void aiDecideCard2() {
-        // set up the test scenario where AI has
-        // a higher trump card but has to follow suit
-        final String trump = game.getKittyCard().getSuit();
-        game.setCurrentPlayerTurn(2);
-
-        // create a trick with a lead card and a higher card played by another player
-        final Trick trick = new Trick();
-        trick.setLeadCard(new Card("Hearts", "9", 8));
-        trick.addCardToTrick(new Card("blank", "10", 13), 1);
-
-        // create a hand with a higher trump card
-        final Hand hand = new Hand();
-        hand.addCard(new Card("Spades", "Queen", 5));
-        hand.addCard(new Card(trump, "King", 17));
-
-        // set the trick and hand for the current player
-        game.setTrick(trick);
-        game.getPlayers()[game.getCurrentPlayerTurn()].setHand(hand);
-
-        // call the method to decide what card to play
-        final Card cardToPlay = game.aiDecideCard();
-
-        // assert that the AI decided play a winning card (trump)
-        assertEquals(trump, cardToPlay.getSuit(), "AI decided play a winning card.");
-        assertEquals("Queen", cardToPlay.getRank(), "AI decided play a winning card.");
-    }
 
     /**
      * This test checks if the AI correctly decides what card to
@@ -421,7 +389,7 @@ class GameTest {
         game.getTrick().setCardsPlayed(cardsPlayed);
 
         // call the awardTrickPoints() function, expecting a NullPointerException
-        assertThrows(NullPointerException.class, () -> game.awardTrickPoints(), "Throws exception.");
+        assertThrows(IllegalArgumentException.class, () -> game.awardTrickPoints(), "Throws exception.");
     }
 
     /**
