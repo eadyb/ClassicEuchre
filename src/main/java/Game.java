@@ -567,76 +567,162 @@ public class Game {
         this.hands = Arrays.copyOf(hands, hands.length);
     }
 
+    /**
+     * Gets the trick.
+     *
+     * @return the trick
+     */
     public Trick getTrick() {
         return trick;
     }
 
+    /**
+     * Sets the trick.
+     *
+     * @param trick trick to be set
+     */
     public void setTrick(final Trick trick) {
         this.trick = trick;
     }
 
+    /**
+     * Get the kitty card.
+     *
+     * @return the card in the kitty
+     */
     public Card getKittyCard() {
         return kittyCard;
     }
 
+    /**
+     * Set the kitty card.
+     *
+     * @param kittyCard card to be set as kitty card
+     */
     public void setKittyCard(final Card kittyCard) {
         this.kittyCard = kittyCard;
     }
 
+    /**
+     * Get the current player's turn.
+     *
+     * @return the integer value representing the player
+     */
     public int getCurrentPlayerTurn() {
         return currentPlayerTurn;
     }
 
+    /**
+     * Set whose turn it is.
+     *
+     * @param currentPlayerTurn the integer representing the player number
+     */
     public void setCurrentPlayerTurn(final int currentPlayerTurn) {
         this.currentPlayerTurn = currentPlayerTurn;
     }
 
+    /**
+     * Get the trump suit.
+     *
+     * @return the trump suit as a String
+     */
     public String getTrump() {
         return trump;
     }
 
+    /**
+     * Set the trump suit.
+     *
+     * @param trump suit String to be set as trump
+     */
     public void setTrump(final String trump) {
         this.trump = trump;
     }
 
-
+    /**
+     * Gets whether everyone has decided on trump once.
+     *
+     * @return true or false if everyone has gone once or not
+     */
     public boolean isGoneOnce() {
         return goneOnce;
     }
 
+    /**
+     * Set if everyone has gone once when deciding trump.
+     *
+     * @param goneOnce whether everyone has gone once
+     */
     public void setGoneOnce(final boolean goneOnce) {
         this.goneOnce = goneOnce;
     }
 
-
+    /**
+     * Gets whether the suit was ordered up.
+     *
+     * @return whether suit was ordered up
+     */
     public boolean isOrderedUp() {
         return orderedUp;
     }
 
+    /**
+     * Sets whether the suit was ordered up.
+     *
+     * @param orderedUp whether the suit was ordered up
+     */
     public void setOrderedUp(final boolean orderedUp) {
         this.orderedUp = orderedUp;
     }
 
+    /**
+     * Gets whether the suit was picked up.
+     *
+     * @return whether the suit was picked up
+     */
     public boolean isPickedUp() {
         return pickedUp;
     }
-
+    /**
+     * Sets whether the suit was picked up.
+     *
+     * @param pickedUp  whether the suit was picked up
+     */
     public void setPickedUp(final boolean pickedUp) {
         this.pickedUp = pickedUp;
     }
 
+    /**
+     * Gets the trick score for both teams in an array.
+     *
+     * @return an array or trick scores
+     */
     public int[] getTricksWon() {
         return tricksWon.clone();
     }
 
+    /**
+     * Set the number of tricks won for each team.
+     *
+     * @param tricksWon int array of trick scores
+     */
     public void setTricksWon(final int... tricksWon) {
         this.tricksWon = Arrays.copyOf(tricksWon, tricksWon.length);
     }
 
+    /**
+     * Get the player number of who decided trump.
+     *
+     * @return the player number of who decided trump
+     */
     public int getPlayerDecidedTrump() {
         return playerDecidedTrump;
     }
-
+    /**
+     * Set the player number of who decided trump.
+     *
+     * @param playerDecidedTrump the player number of who decided trump
+     */
     public void setPlayerDecidedTrump(final int playerDecidedTrump) {
         this.playerDecidedTrump = playerDecidedTrump;
     }
